@@ -1,0 +1,57 @@
+<ion-view ng-attr-title="{{ 'Settings' | translate }}">
+
+    <ion-header-bar class="bar-light main-header">
+		<img src="app/img/logo-wat.png" width="207" height="38" alt=""/>
+    </ion-header-bar>
+    <ion-content class="dark-overlay has-header-main">
+		<div class="first-connexion-block">
+			<h1 class="align-center intro">{{ 'intro.First connection' | translate }}</h1>
+			<ion-list>
+				<ion-item class="item-divider item-positive item-select-red">
+					{{ 'intro.Select your profile preferences' | translate }}
+				</ion-item>
+				<ion-item class="item-icon-right" ui-sref="intro-settings-branch">
+					{{ 'Branch' | translate }}
+					<span class="item-note">{{ $root.userPreferences.branch | translate }}</span>
+					<i class="icon ion-chevron-right"></i>
+				</ion-item>
+				<ion-item class="item-icon-right" ui-sref="intro-settings-entity">
+					{{ 'Entity' | translate }}
+					<span class="item-note">{{ $root.userPreferences.entity }}</span>
+					<i class="icon ion-chevron-right"></i>
+				</ion-item>
+				<ion-item class="item-icon-right" ui-sref="intro-settings-language">
+					{{ 'Languages' | translate }}
+					<span class="item-note">{{ $root.userPreferences.language | translate  }}/{{ $root.userPreferences.preferrdlanguage | translate }}</span>
+					<i class="icon ion-chevron-right"></i>
+				</ion-item>
+
+				<ion-item class="item-icon-right" ui-sref="intro-settings-professionalfield">
+					{{ 'Professional Field' | translate }}
+					<span class="item-note">{{ $root.userPreferences.professionalField | translate }}</span>
+					<i class="icon ion-chevron-right"></i>
+				</ion-item>
+				<ion-item class="item-icon-right" ui-sref="intro-settings-geographicalsite">
+					{{ 'Geographical Site' | translate }}
+					<span class="item-note">{{ $root.userPreferences.geographicalSite | translate }}</span>
+					<i class="icon ion-chevron-right"></i>
+				</ion-item>
+				
+				<ion-item class="item-divider item-positive item-select-red">
+					{{ 'settings.Display preferences' | translate }}
+				</ion-item>
+				<ion-item class="item-icon-right" ui-sref="intro-settings-depth">
+					{{ 'settings.Depth' | translate }}
+					<span class="item-note">{{ $root.userPreferences.depth }}</span>
+					<i class="icon ion-chevron-right"></i>
+				</ion-item>
+			</ion-list>
+			<a class="button button-block button-intro-setting" ng-click="saveFirstUserPreference();"
+					ui-sref="app.carousel-group">
+				{{ 'intro.Confirm my preferences' | translate }}
+			</a>
+		</div>
+	</ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

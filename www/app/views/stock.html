@@ -1,0 +1,90 @@
+<ion-view hide-back-button="true">
+    <ion-nav-title>{{  $root.MenuTitle | translate }}</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-hide="$exposeAside.active"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-refresher pulling-text="{{'Force Refresh' | translate}}" on-pulling="onMyPulling()" on-refresh="loadStockData()">
+        </ion-refresher>
+        <h4 ng-show="onPulling" class="align-center">
+            <div ng-if="refreshTime">
+                {{ 'Refreshed' | translate }} <span am-time-ago="refreshTime"></span>
+            </div>
+            <div ng-if="!refreshTime">
+                {{ 'Refreshing' | translate }}
+            </div>
+
+        </h4>
+        <div class="list">
+            <ion-item class="item-left item-icon-right"
+                      ui-sref="app.indicator-stock-detail({ code: 'TOTALFR'})">
+                <h2> {{ 'TOTALFR' | translate }} </h2>
+                <div class="padding-top" ng-if="TOTALFR.close">
+                    <span class="stock-close">{{TOTALFR.close | number:2}} €</span>
+                    <span class="padding-left"
+                          ng-class="{ 'stock-variation-red': TOTALFR.variation < 0,  'stock-variation-green': TOTALFR.variation >= 0}">
+                        {{TOTALFR.variation >= 0 ? '&#9650' : '&#9660;'}}
+                        {{TOTALFR.variation >= 0 ? '+' : ''}}{{TOTALFR.variation | number:2}} %</span>
+                </div>
+                <div class="meta">{{TOTALFR['datetime-paris']}}</div>
+                <i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-left item-icon-right"
+                ui-sref="app.indicator-stock-detail({code: 'TOTALUS'})">
+                <h2> {{ 'TOTALUS' | translate }} </h2>
+                <div class="padding-top" ng-if="TOTALUS.close">
+                    <span class="stock-close">{{TOTALUS.close | number:2}} US$</span>
+                    <span class="padding-left"
+                            ng-class="{ 'stock-variation-red': TOTALUS.variation < 0,  'stock-variation-green': TOTALUS.variation >= 0}">
+                        {{TOTALUS.variation >= 0 ? '&#9650' : '&#9660;'}}
+                        {{TOTALUS.variation >= 0 ? '+' : ''}}{{TOTALUS.variation | number:2}} %</span>
+                </div>
+                <div class="meta">{{TOTALUS['datetime-paris']}}</div>
+                    <i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-left">
+                <h2> BRENT </h2>
+                <div class="padding-top" ng-if="BRENT.close">
+                    <span class="stock-close">{{BRENT.close | number:2}} US$</span>
+                    <span class="padding-left"
+                            ng-class="{ 'stock-variation-red': BRENT.variation < 0, 'stock-variation-green': BRENT.variation >= 0}">
+                        {{BRENT.variation >= 0 ? '&#9650' : '&#9660;'}}
+                        {{BRENT.variation >= 0 ? '+' : ''}}{{BRENT.variation | number:2}}%</span>
+                </div>
+                <div class="meta">{{BRENT['datetime-paris']}}</div>
+            </ion-item>
+            <ion-item class="item-left">
+
+                <h2> CAC 40 </h2>
+                <div class="padding-top" ng-if="CAC.close">
+                    <span class="stock-close">{{CAC.close | number:2}} €</span>
+                    <span class="padding-left" ng-class="{ 'stock-variation-red': CAC.variation < 0,  'stock-variation-green': CAC.variation >= 0}">
+                        {{CAC.variation >= 0 ? '&#9650' : '&#9660;'}}
+                        {{CAC.variation >= 0 ? '+' : ''}}{{CAC.variation | number:2}}%</span>
+                </div>
+                <div class="meta">{{CAC['datetime-paris']}}</div>
+            </ion-item>
+            <ion-item class="item-left">
+                <h2> DOW JONES </h2>
+                <div class="padding-top" ng-if="DOWJONES.close">
+                    <span class="stock-close">{{DOWJONES.close | number:2}} US$</span>
+                    <span class="padding-left"
+                          ng-class="{ 'stock-variation-red': DOWJONES.variation < 0,  'stock-variation-green': DOWJONES.variation >= 0}">
+                        {{DOWJONES.variation >= 0 ? '&#9650' : '&#9660;'}}
+                        {{DOWJONES.variation >= 0 ? '+' : ''}}{{DOWJONES.variation | number:2}}%</span>
+                </div>
+                <div class="meta">{{DOWJONES['datetime-paris']}}</div>
+            </ion-item>
+
+            <ion-item class="item-left">
+                <h2> EUR US$ </h2>
+                <div class="padding-top" ng-if="EURUSD.close">
+                    <span class="stock-close">{{EURUSD.close | number:2}} US$</span>
+                </div>
+                <div class="meta">{{EURUSD['datetime-paris']}}</div>
+            </ion-item>
+        </div>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

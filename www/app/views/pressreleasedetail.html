@@ -1,0 +1,17 @@
+<ion-view cache-view="false">
+    <ion-nav-title></ion-nav-title>
+    <ion-content class="has-header padding-horizontal">
+        <h1 class="title">{{newsDetail.title}}</h1>
+		<h2 ng-show="{{newsDetail.description}}">{{newsDetail.description}}</h2>
+        <h4 ng-show="{{newsDetail.subtitle}}">{{newsDetail.subtitle}}</h4>
+		<div class="meta meta-detail">{{newsDetail.publicationDate}}</div>
+		<div ng-bind-html="newsDetail.content | hrefToExternal"></div>
+
+		<div ng-include src="'app/views/include/linkpdfinwat-partial.html'"></div>
+
+		<div ng-include src="'app/views/include/linkarticleinwat-partial.html'"></div>
+
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

@@ -1,0 +1,9 @@
+<ion-item ng-repeat="item in newsItems.newsData" class="item-thumbnail-left"
+          ng-click="showNewsDetail($event,item,'app.nomination-detail')">
+    <!-- check whether image is local -->
+    <img imagenie="{{ item.nominationData.image }}" ng-if="item.nominationData.image.indexOf('app/img') == -1"/>
+    <img ng-src="{{ item.nominationData.image }}" ng-if="item.nominationData.image.indexOf('app/img') > -1"/>
+    <h2> {{item.title | removeAppointmentText}} </h2>
+    <h4 class="content-summary-4">{{item.description}}</h4>
+
+</ion-item>

@@ -1,0 +1,62 @@
+<ion-view hide-back-button="true">
+    <ion-nav-title>{{  $root.MenuTitle | translate }}</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-toggle toogle-class="toggle-assertive"
+                        ng-model="debugPreferences.debugMode.checked"
+                        ng-change="updateDebugPreferences()">
+                Debug mode
+            </ion-toggle>
+            <ion-toggle toogle-class="toggle-assertive"
+                        ng-model="debugPreferences.liveData.checked"
+                        ng-change="updateDebugPreferences()">
+                Live Data
+            </ion-toggle>
+            <div ng-show="debugPreferences.debugMode.checked" class="item-input-inset">
+                Root Url
+                <label class="item-input-wrapper">
+                    <input type="text" ng-model="debugPreferences.liveRootUrl">
+                </label>
+                <button class="button button-small" ng-click="updateDebugPreferences();getRssData()">
+                    Set
+                </button>
+            </div>
+
+            <ion-toggle toogle-class="toggle-assertive"
+                        ng-model="debugPreferences.jsonFormat.checked"
+                        ng-change="updateDebugPreferences();getRssData()">
+                Show feed data in JSON format
+            </ion-toggle>
+
+        </ion-list>
+        <ion-item ng-show="debugPreferences.debugMode.checked" class="item-input-inset">
+            Query Parameters
+            <label class="item-input-wrapper">
+                <input type="text" ng-model="debugPreferences.queryParameters">
+            </label>
+            <button class="button button-small" ng-click="updateDebugPreferences();getRssData()">
+                Submit
+            </button>
+        </ion-item>
+        <ion-item ng-show="debugPreferences.debugMode.checked">
+            <textarea rows="5" ng-if="debugPreferences.jsonFormat.checked">
+                {{ debugRssData | json }}
+            </textarea>
+            <textarea rows="5" ng-if="!debugPreferences.jsonFormat.checked">
+                {{ debugRssData }}
+            </textarea>
+        </ion-item>
+        <ion-item class="item-button-right">
+            Clear Cache
+            <a class="button button-positive" ng-click="clearCache()">
+                <i class="icon ion-trash-b"></i>
+            </a>
+        </ion-item>
+
+        <ng-include src="'app/views/include/xiti-partial.html'">
+        </ng-include>
+    </ion-content>
+</ion-view>

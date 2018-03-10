@@ -1,0 +1,6 @@
+<ion-item ng-repeat="item in newsItems.newsData" class="item-thumbnail-left"
+          ng-click="showNewsDetail($event,item,'app.news-detail')">
+    <img imagenie="{{ item.image }}" class="item-thumbnail-left-halfheight" />
+    <h2> {{item.title}} </h2>
+    <h4 class="content-summary-4">{{item.description}}</h4>
+</ion-item>

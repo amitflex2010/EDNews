@@ -1,0 +1,74 @@
+<ion-view hide-back-button="true" cache-view="false">
+    <ion-nav-title>{{  $root.MenuTitle | translate }}</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-hide="$exposeAside.active"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item class="item-divider item-positive">
+				{{ 'settings.Profile preference' | translate }}
+			</ion-item>
+			<ion-item class="item-icon-right" ui-sref="app.settings-branch-detail">
+                {{ 'Branch' | translate }}
+                <span class="item-note">
+                  {{ $root.userPreferences.branch }}
+                </span>
+                <i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ui-sref="app.settings-entity-detail">
+                {{ 'Entity' | translate }}
+                <span class="item-note">
+                  {{ $root.userPreferences.entity }}
+                </span>
+                <i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ui-sref="app.settings-language-detail">
+                {{ 'Languages' | translate }}
+                <span class="item-note">
+                  {{ $root.userPreferences.language | translate }}/{{ $root.userPreferences.preferrdlanguage | translate }}
+                </span>
+               
+                <i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ui-sref="app.settings-professionalfield-detail">
+                {{ 'Professional Field' | translate }}
+                <span class="item-note">
+                  {{ $root.userPreferences.professionalField | translate }}
+                </span>
+                <i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ui-sref="app.settings-geographicalsite-detail">
+                {{ 'Geographical Site' | translate }}
+                <span class="item-note">
+                  {{ $root.userPreferences.geographicalSite | translate }}
+                </span>
+                <i class="icon ion-chevron-right"></i>
+            </ion-item>
+            
+            
+			<ion-item class="item-divider item-positive">
+				{{ 'settings.Display preferences' | translate }}
+			</ion-item>
+            <ion-item class="item-icon-right" ui-sref="app.settings-depth-detail">
+                {{ 'settings.Depth' | translate }}
+                <span class="item-note">
+                  {{ $root.userPreferences.depth }}
+                </span>
+                <i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ui-sref="app.settings-groupItem-detail">
+                {{ 'News' | translate }}
+                
+                <i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ui-sref="app.settings-safetyindicator-detail">
+                {{ 'Notifications' | translate }}
+                
+                <i class="icon ion-chevron-right"></i>
+            </ion-item>
+			
+        </ion-list>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

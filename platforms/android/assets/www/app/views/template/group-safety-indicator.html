@@ -1,0 +1,20 @@
+<ion-modal-view  style="width: 80%; height: 70%; min-height: 0;  top: 15%; left: 10%; right: 10%; bottom: 10%;  border:2px inset #d3d3d3;">
+	<ion-content content scroll="false">
+<div id="indisecAnnonce" style="display: block;"><div class="infiIndicateurparttitle"><h2><div ng-class="LangStyleSafetypopup"  class="first">{{'GROUP SAFETY' | translate}}</div><div ng-class="LangStyleIndictpopup" class="second">{{'INDICATOR' | translate}}</div>
+
+<img class="infiIndicateuricon" src="app/img/securite_128.png"/></h2></div>
+
+<div class="lastupdateTextStyle" style="margin-top:43px;">{{'Last Update' | translate}}&nbsp; {{getlastUpdateTimeStamp.datestr}}  {{getlastUpdateTimeStamp.timestr}}</div>
+
+<div class="infiIndicateurwrapper">
+	<div id="textescrollerWat" class="textescroller" style="width: auto; overflow: auto;">
+		<div id="content" style="font-family: Helvetica; text-align:left;position: relative; overflow: auto; top: 25px; left: 0px; height: 500px; width: auto; z-index: 1;"><h2><b><span style="margin-left: 54px; display: block; clear: both; width: 135px; font-size: 1.25em"></span></b></h2><br><div style="font-size: 0.90em; height: 100%; overflow: auto;" ;><div ng-bind-html="secIndicatorData.incident_description| hrefToExternal"></div></div><br><br></div>
+		
+		</div>
+		</div>
+		<div style="position:relative;">
+		<img ng-click="closeModalPopup()" style="bottom:-2px;right:-2px;width:23px;position:fixed;" src="app/img/close_Icon.png" />
+		</div>
+		
+</ion-content>
+</ion-modal-view>

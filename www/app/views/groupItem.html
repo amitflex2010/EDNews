@@ -1,0 +1,64 @@
+<ion-view>
+    <ion-nav-title></ion-nav-title>
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item class="item-divider item-positive">
+               {{ 'News' | translate }}
+                
+            </ion-item>
+
+           <ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.watsnewgroup.checked"
+                       ng-change="updateUserPreferences()">
+				{{ 'Group' | translate }} - {{ 'Wat\'s up' | translate }}
+			</ion-toggle>
+			<ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.pressrelease.checked"
+                       ng-change="updateUserPreferences()">
+				{{ 'Group' | translate }} - {{ "Press Release" | translate }}
+			</ion-toggle>
+			<ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.presspanorama.checked"
+                       ng-change="updateUserPreferences()">
+				{{ 'Group' | translate }} - {{ "Press Panorama" | translate }}
+			</ion-toggle>
+			<ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.nominationsgroup.checked"
+                       ng-change="updateUserPreferences()">
+				{{ 'Group' | translate }} - {{ 'Nominations' | translate }}
+			</ion-toggle>
+			<ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.newsbranch.checked"
+                       ng-change="updateUserPreferences()">
+				{{ 'My Branch' | translate }} - {{ 'News' | translate }}
+			</ion-toggle>
+			<ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.nominationsbranch.checked"
+                       ng-change="updateUserPreferences()">
+				{{ 'My Branch' | translate }} - {{ 'Nominations' | translate }}
+			</ion-toggle>
+            <ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.newsentity.checked"
+                        ng-change="updateUserPreferences()">
+                {{ 'My Entity' | translate }} - {{ 'News' | translate }}
+            </ion-toggle>
+            <ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.nominationsentity.checked"
+                        ng-change="updateUserPreferences()">
+                {{ 'My Entity' | translate }} - {{ 'Nominations' | translate }}
+            </ion-toggle>
+            <ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.newsprofessionalfield.checked"
+                        ng-change="updateUserPreferences()">
+                {{ 'My Professional Field' | translate }} - {{ 'News' | translate }}
+            </ion-toggle>
+            <ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.nominationsprofessionalfield.checked"
+                        ng-change="updateUserPreferences()">
+                {{ 'My Professional Field' | translate }} - {{ 'Nominations' | translate }}
+            </ion-toggle>
+            <ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.newsgeographicalsite.checked"
+                        ng-change="updateUserPreferences()">
+                {{ 'My Geographical Site' | translate }} - {{ 'News' | translate }}
+            </ion-toggle>
+            
+            <ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.newshumanresources.checked"
+                        ng-change="updateUserPreferences()">
+                {{ 'Human Resources' | translate }} - {{ 'News' | translate }}
+            </ion-toggle>
+
+        </ion-list>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

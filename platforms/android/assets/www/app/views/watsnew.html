@@ -1,0 +1,26 @@
+<ion-view hide-back-button="true">
+    <ion-nav-title>{{  $root.MenuTitle | translate }}</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-hide="$exposeAside.active"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right"> <!-- right -->
+  
+  <div ng-if="!ConnectedtoVPN"><span class="vpn-notconnected-style">{{'Disconnected from'|translate}}<br> {{'Total Network'| translate}}</span></div>
+   <div class="logo-style"><img src="app/img/securite_128.png" height="26" ng-click=showAccidentDetails();></div>
+   <div ng-click=showAccidentDetails(); ng-if="indicatorType == 'num_days'" class="infoNumdays-style" ng-class="style_name">{{date_diff}}<span  class="infoTextDays-style">{{'DAYS' | translate}}</span></div><span ng-if="indicatorType == 'num_days'" class="infosubscriptText-style" ng-class="fr_len3_pad">{{'without fatal accident' | translate }}</span>
+   <div ng-click=showAccidentDetails(); ng-if="indicatorType == 'group_safety'" class="infoTextGroup-style" ng-class="LangStyleSafety">{{'GROUP SAFETY' | translate}}</div><span ng-click=showAccidentDetails(); ng-if="indicatorType == 'group_safety'" class="infoSafetyText-style" ng-class="LangStyleIndict">{{'INDICATOR' | translate}}</span>
+   
+ </ion-nav-buttons> 
+    <ion-content class="has-header">
+        <div ng-include src="'app/views/include/refresher-partial.html'"></div>
+        <ion-list>
+            <div ng-include src="'app/views/include/newsdebugger-partial.html'"></div>
+            <ion-item ng-repeat="item in newsItems.newsData" class="item-body">
+                <h4>{{item.description}}</h4>
+                <div class="meta">{{ item.publicationDate }}</div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

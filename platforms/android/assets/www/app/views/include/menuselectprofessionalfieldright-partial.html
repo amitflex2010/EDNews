@@ -1,0 +1,6 @@
+<select ng-options="item as item.text | translate for item in professionalFields | orderBy:'text | translate'"
+        ng-model="selectedProfessionalField"
+        ng-change="updateProfessionalField(selectedProfessionalField.text)"
+        class="item-note-select item-note"
+        >
+</select>

@@ -1,0 +1,59 @@
+<ion-view hide-back-button="true">
+    <ion-nav-title>{{  $root.MenuTitle | translate }}</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-hide="$exposeAside.active"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header padding">
+		<h4 class="align-center">{{ 'help.header' | translate }}</h4>
+		<div class="card">
+			<div class="item item-divider item-positive">
+				{{ 'help.menu.header' | translate }}
+			</div>
+			<div class="item item-text-wrap item-thumbnail-left">
+				<div class="help-icon">
+					<button class="button button-icon icon ion-navicon button-valign-middle" ng-click="debugMode1()"></button>
+				</div>
+				<p>{{ 'help.menu.1' | translate }}</p>
+				<p>{{ 'help.menu.2' | translate }}</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="item item-divider item-positive">
+				{{ 'help.nav-branch.header' | translate }}
+			</div>
+			<div class="item item-text-wrap item-thumbnail-left">
+				<div class="help-icon help-branch-nav">
+					<button class="button button-clear ion-arrow-left-b padding"></button>{{ 'help.nav-branch.example' | translate }}<button class="button button-clear ion-arrow-right-b padding"></button>
+				</div>
+				<p>{{ 'help.nav-branch.1' | translate }}</p>
+				<p>{{ 'help.nav-branch.2' | translate }}</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="item item-divider item-positive">
+				{{ 'help.settings.header' | translate }}
+			</div>
+			<div class="item item-text-wrap item-thumbnail-left">
+				<div class="help-icon">
+					<button class="button button-icon icon ion-gear-b button-valign-middle2" ng-click="debugMode()"></button>
+				</div>
+				<p>{{ 'help.settings.1' | translate }}</p>
+				<p>{{ 'help.settings.2' | translate }}</p>
+			</div>	
+		</div>
+		<div class="card">
+			<div class="item item-divider item-positive">
+				{{ 'help.questions.header' | translate }}
+			</div>
+			<div class="item item-text-wrap item-thumbnail-left">
+				<div class="help-icon">
+					<button class="button button-icon icon ion-email button-valign-middle2"></button>
+				</div>
+				<p>{{ 'help.questions.1' | translate }}</p>
+				<p><a href="mailto:{{ 'help.questions.mail' | translate }}">{{ 'help.questions.mail' | translate }}</a></p>
+			</div>	
+		</div>
+        <ng-include src="'app/views/include/xiti-partial.html'">
+        </ng-include>
+    </ion-content>
+</ion-view>

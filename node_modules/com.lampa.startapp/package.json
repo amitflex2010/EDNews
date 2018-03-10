@@ -1,0 +1,96 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/lampaa/com.lampa.startapp.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/lampaa/com.lampa.startapp.git",
+        "spec": "git+https://github.com/lampaa/com.lampa.startapp.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:lampaa/com.lampa.startapp.git",
+          "sshUrl": "git+ssh://git@github.com/lampaa/com.lampa.startapp.git",
+          "httpsUrl": "git+https://github.com/lampaa/com.lampa.startapp.git",
+          "gitUrl": "git://github.com/lampaa/com.lampa.startapp.git",
+          "shortcut": "github:lampaa/com.lampa.startapp",
+          "directUrl": "https://raw.githubusercontent.com/lampaa/com.lampa.startapp/master/package.json"
+        }
+      },
+      "C:\\WATNews-DEV3.0\\node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/lampaa/com.lampa.startapp.git",
+  "_id": "com.lampa.startapp@0.1.4",
+  "_inCache": true,
+  "_location": "/com.lampa.startapp",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/lampaa/com.lampa.startapp.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/lampaa/com.lampa.startapp.git",
+    "spec": "git+https://github.com/lampaa/com.lampa.startapp.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:lampaa/com.lampa.startapp.git",
+      "sshUrl": "git+ssh://git@github.com/lampaa/com.lampa.startapp.git",
+      "httpsUrl": "git+https://github.com/lampaa/com.lampa.startapp.git",
+      "gitUrl": "git://github.com/lampaa/com.lampa.startapp.git",
+      "shortcut": "github:lampaa/com.lampa.startapp",
+      "directUrl": "https://raw.githubusercontent.com/lampaa/com.lampa.startapp/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/lampaa/com.lampa.startapp.git#9dcc75944068d0b0910fb0949ebb0b90dbac2da3",
+  "_shasum": "38d7127e9d7459de3b26a2a0691d36b79d4324d5",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/lampaa/com.lampa.startapp.git",
+  "_where": "C:\\WATNews-DEV3.0\\node_modules",
+  "author": {
+    "name": "lampaa"
+  },
+  "bugs": {
+    "url": "https://github.com/lampaa/com.lampa.startapp/issues"
+  },
+  "cordova": {
+    "id": "com.lampa.startapp",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Phonegap plugin for check or launch other application in android device.",
+  "devDependencies": {},
+  "gitHead": "9dcc75944068d0b0910fb0949ebb0b90dbac2da3",
+  "homepage": "https://github.com/lampaa/com.lampa.startapp#readme",
+  "keywords": [
+    "cordova",
+    "startapp",
+    "lampa",
+    "extra",
+    "extrafields",
+    "hasextra",
+    "cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "com.lampa.startapp",
+  "optionalDependencies": {},
+  "readme": "\r\n# cordova plugin startapp\r\n\r\nPhonegap plugin for check or launch other application, get extras in phonegap app.\r\n\r\n> Install: ```cordova plugin add com.lampa.startapp```\r\n> \r\n> Install: ```cordova plugin add https://github.com/lampaa/com.lampa.startapp.git```\r\n> \r\n> Delete:  ```cordova plugin rm com.lampa.startapp```\r\n> \r\n> Delete previos version:  ```cordova plugin rm org.apache.cordova.startapp```\r\n\r\n[Manually installation for Android.](/MANUALLY_INSTALL.md)\r\n\r\n\r\n**NEW!** [Script builder.](http://lampaa.github.io/com.lampa.startapp/index.html) Create script with UI builder.\r\n\r\n\r\n# ANDROID\r\n\r\nTo run other application, you need to build data:\r\n```javascript\r\nvar sApp = startApp.set({} params [, {} extras]);\r\n```\r\n| Param | Description | Default | Values |\r\n| --- | --- | --- | --- |\r\n| intent | [Intent(String action)](https://developer.android.com/reference/android/content/Intent.html#Intent%28java.lang.String%29)) | null | String |\r\n| application | [Intent (Context packageContext)](https://developer.android.com/reference/android/content/Intent.html#Intent%28android.content.Context,%20java.lang.Class%3C?%3E%29) | null | String |\r\n| action | [Intent setAction](http://developer.android.com/reference/android/content/Intent.html#setAction(java.lang.String)) | null | String |\r\n| action | [Intent setAction](http://developer.android.com/reference/android/content/Intent.html#setAction(java.lang.String)) | null | String |\r\n| category | [Intent addCategory](http://developer.android.com/reference/android/content/Intent.html#addCategory(java.lang.String)) | null | String |\r\n| type | [Intent setType](http://developer.android.com/intl/ru/reference/android/content/Intent.html#setType(java.lang.String))  | null | String |\r\n| package | [Intent setPackage](http://developer.android.com/intl/ru/reference/android/content/Intent.html#setPackage(java.lang.String)) | null | String |\r\n| uri | [Intent Uri](http://developer.android.com/intl/ru/reference/android/content/Intent.html#Intent(java.lang.String, android.net.Uri)) | null | String |\r\n| flags | [Intent setFlags](http://developer.android.com/reference/android/content/Intent.html#setFlags(int)) | null | String |\r\n| component | [Intent setComponent](http://developer.android.com/reference/android/content/Intent.html#setComponent(android.content.ComponentName)) | null |  String |\r\n| intentstart | set type of start intent  | startActivity | startActivity, startActivityForResult, sendBroadcast |\r\n\r\nExtras as a set of key-value:\r\n```javascript\r\n{\r\n\t\"key1\":\"value1\",\r\n    \"key2\":\"value2\"\r\n}\r\n```\r\n\r\n_Example_\r\n\r\n```javascript\r\nvar sApp = startApp.set({ /* params */\r\n\t\"action\":\"ACTION_MAIN\",\r\n\t\"category\":\"CATEGORY_DEFAULT\",\r\n\t\"type\":\"text/css\",\r\n\t\"package\":\"com.lampa.startapp\",\r\n\t\"uri\":\"file://data/index.html\",\r\n\t\"flags\":[\"FLAG_ACTIVITY_CLEAR_TOP\",\"FLAG_ACTIVITY_CLEAR_TASK\"],\r\n\t\"component\": [\"com.app.name\",\"com.app.name.Activity\"],\r\n\t\"intentstart\":\"startActivity\",\r\n}, { /* extras */\r\n\t\"EXTRA_STREAM\":\"extraValue1\",\r\n\t\"extraKey2\":\"extraValue2\"\r\n});\r\n```\r\n\r\n```startApp.set()``` return object:\r\n```javascript\r\nsApp.start(function() { /* success */\r\n\tconsole.log(\"OK\");\r\n}, function(error) { /* fail */\r\n\talert(error);\r\n});\r\n```\r\nor\r\n```javascript\r\nsApp.check(function(values) { /* success */\r\n\tconsole.log(values);\r\n}, function(error) { /* fail */\r\n\talert(error);\r\n});\r\n```\r\nIf success, ```values``` contains data: `versionName`, `packageName`, `versionCode` and `applicationInfo`.\r\n\r\nTo get all extra fields use method ```extraFiels```:\r\n```javascript\r\nstartApp.extraFields(function(fields) { /* success */\r\n\tconsole.log(fields);\r\n}, function() { /* fail */\r\n\r\n});\r\n```\r\nVariable ```fields``` contains object array, example:\r\n```javascript\r\n{\r\n\t\"key1\":\"value1\",\r\n    \"key2\":\"value2\"\r\n}\r\n```\r\n\r\nTo get one extra field use method ```getExtra```:\r\n```javascript\r\nstartApp.getExtra(field, function(value) { /* success */\r\n\tconsole.log(fields);\r\n}, function() { /* fail */\r\n\r\n});\r\n```\r\nVariable ```field``` is a String.\r\nVariable ```value``` contains String value.\r\n\r\nTo has one extra field use method ```extraField```:\r\n```javascript\r\nstartApp.hasExtra(field, function() { /* success */\r\n\tconsole.log(fields);\r\n}, function() { /* fail */\r\n\r\n});\r\n```\r\nVariable ```field``` is a String.\r\n\r\n# Samples\r\n\r\n_Set application as only package name_:\r\n```js\r\nvar sApp = startApp.set({\r\n\t\"application\":\"com.application.name\"\r\n});\r\n```\r\n\r\n_Set application as intent value and flag ([issue](https://github.com/lampaa/com.lampa.startapp/issues/50))_:\r\n```js\r\nvar sApp = startApp.set({\r\n\t\"intent\": \"com.shazam.android.intent.actions.START_TAGGING\",\r\n\t\"flags\": [\"FLAG_ACTIVITY_NEW_TASK\"]\r\n}); \r\n```\r\n\r\n_Set application as package and activity_:\r\n```js\r\nvar sApp = startApp.set({\r\n\t\"component\": [\"com.app.name\",\"com.app.name.Activity\"]\r\n});\r\n```\r\n\r\n_Set application as action, package, type and Uri_:\r\n```js\r\nvar sApp = startApp.set({ /* params */\r\n\t\"action\":\"ACTION_MAIN\",\r\n\t\"type\":\"text/css\",\r\n\t\"package\":\"com.lampa.startapp\",\r\n\t\"uri\":\"file://data/index.html\"\r\n});\r\n```\r\n\r\n\r\n_Start application with extra fields_\r\n\r\n```js\r\nvar sApp = startApp.set({ /* params */\r\n\t\"component\": [\"com.app.name\",\"com.app.name.Activity\"]\r\n}, { /* extras */\r\n\t\"extraKey1\":\"extraValue1\",\r\n\t\"extraKey2\":\"extraValue2\"\r\n});\r\n```\r\n\r\n\r\nExample, call skype:\r\n```js\r\nstartApp.set({ /* params */\r\n\t\"action\": \"ACTION_VIEW\",\r\n\t\"uri\": \"skype:+79109999999\"\r\n}).start();\r\n```\r\nExample, call phone:\r\n```js\r\nstartApp.set({ /* params */\r\n\t\"action\": \"ACTION_CALL\",\r\n\t\"uri\": \"tel:+79109999999\"\r\n}).start();\r\n```\r\nExample, call browser:\r\n```js\r\nstartApp.set({ /* params */\r\n\t\"action\": \"ACTION_VIEW\",\r\n\t\"uri\": \"https://github.com/lampaa\"\r\n}).start();\r\n```\r\nExample, call facebook:\r\n```js\r\nstartApp.set({ /* params */\r\n\t\"action\": \"ACTION_VIEW\",\r\n\t\"uri\": \"fb://facewebmodal/f?href=https://www.facebook.com/GitHub\"\r\n}).start();\r\n```\r\nExample, call whatsapp:\r\n```js\r\nstartApp.set({ /* params */\r\n\t\"action\": \"ACTION_SEND\",\r\n\t\"package\": \"com.whatsapp\",\r\n\t\"type\": \"text/plain\"\r\n}, {\r\n\t\"android.intent.extra.TEXT\":\"Text...\"\r\n}).start();\r\n```\r\nExample, call whatsapp chat:\r\n```js\r\nstartApp.set({ /* params */\r\n\t\"action\": \"ACTION_SEND\",\r\n\t\"package\": \"com.whatsapp\",\r\n\t\"type\": \"text/plain\",\r\n\t\"uri\": \"+79123456789\"\r\n}, {\r\n\t\"EXTRA_TEXT\":\"Text...\",\r\n\t\"chat\": true\r\n}).start();\r\n```\r\nExample, call sms:\r\n```js\r\nstartApp.set({ /* params */\r\n\t\"action\": \"ACTION_MAIN\",\r\n\t\"category\": \"CATEGORY_DEFAULT\",\r\n\t\"type\": \"vnd.android-dir/mms-sms\"\r\n}).start();\r\n```\r\nExample, play mp4 video:\r\n```js\r\nstartApp.set({ /* params */\r\n\t\"action\": \"ACTION_VIEW\",\r\n\t\"uri\": \"http://domain.com/videofile.mp4\",\r\n\t\"type\": \"video/mp4\"\r\n}).start();\r\n```\r\nExample, open contacts book:\r\n```js\r\nstartApp.set({ /* params */\r\n\t\"action\": \"ACTION_PICK\",\r\n\t\"uri\": \"ContactsContract.Contacts.CONTENT_URI\",\r\n\t\"intentstart\":\"startActivityForResult\"\r\n}).start();\r\n```\r\n\r\n\r\nUse **iOS**\r\n\r\n_Set iOS application_\r\n\r\n```js\r\nvar sApp = startApp.set(\"twitter://\");\r\n```\r\n\r\nreturn ```startApp``` object:\r\n```javascript\r\nsApp.start(function() { /* success */\r\n\tconsole.log(\"OK\");\r\n}, function(error) { /* fail */\r\n\talert(error);\r\n});\r\n```\r\nor\r\n```javascript\r\nsApp.check(function(values) { /* success */\r\n\tconsole.log(values);\r\n}, function(error) { /* fail */\r\n\talert(error);\r\n});\r\n```\r\n\r\n===========================================\r\nTags: \r\n\r\nCordova start external application.\r\nAndroid open an external application.\r\nPhonegap start external application.\r\nLaunching External Intents Works on Cordova.\r\nAndroid launch external activities.\r\nAndroid check app availability.\r\nAndroid launch application with parameters. \r\n\r\nProse\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lampaa/com.lampa.startapp.git"
+  },
+  "version": "0.1.4"
+}

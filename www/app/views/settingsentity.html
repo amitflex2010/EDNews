@@ -1,0 +1,36 @@
+<ion-view>
+    <ion-nav-title></ion-nav-title>
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item class="item-divider item-positive">
+                {{ 'Entity' | translate }}
+                <span class="item-note">
+                  {{ $root.userPreferences.entity }}
+                </span>
+            </ion-item>
+            <div ng-repeat="item in entities">
+                <ion-item class="item-stable"
+                           ng-click="toggleGroup(item)"
+                           ng-class="{active: isGroupShown(item)}"
+                           ng-value="item.branch"
+                        >
+                    <i class="icon" ng-class="isGroupShown(item) ? 'ion-minus' : 'ion-plus'"></i>
+                    &nbsp;
+                    {{ item.branch | translate }}
+                </ion-item>
+                <ion-radio class="item-accordion"
+                          ng-repeat="entity in item.entities| orderObjectBy:'text'"
+                          ng-show="isGroupShown(item)"
+                          ng-model="$root.userPreferences.entity"
+                          ng-value="entity.text"
+                          ng-change="updateUserPreferences()"
+                          ui-sref="app.settings"
+                          >
+                    {{entity.text | translate}}
+                </ion-radio>
+            </div>
+        </ion-list>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

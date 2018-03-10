@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!-- full screen for safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="apple-mobile-web-app-title" content="Wat RSS">
+    <!-- Disable phone number detection. -->
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="/img/wat.png">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="app/css/styles.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+
+    <script src="app/js/config/config.js"></script>
+    <script src="app/js/config/environment.js"></script>
+    <script src="app/js/config/ressources.js"></script>
+    <script src="app/js/app.js"></script>
+    <script src="app/js/controllers.js"></script>
+    <script src="app/js/serviceApi.js"></script>
+    <script src="app/js/filters.js"></script>
+    <script src="app/js/directives.js"></script>
+    
+    <script src="lib/lodash/dist/lodash.min.js"></script>
+    <script src="lib/x2js/xml2json.min.js"></script>
+    <script src="lib/angular-translate/angular-translate.min.js"></script>
+    <script src="lib/angular-cache/dist/angular-cache.min.js"></script>
+    <script src="lib/moment/min/moment.min.js"></script>
+    <script src="lib/moment/locale/fr.js"></script>
+    <script src="lib/imgcache/imgcache.js"></script>
+    <script src="lib/localforage/dist/localforage.min.js"></script>
+    <script src="lib/angular-localforage/dist/angular-localForage.min.js"></script>
+
+    <script src="lib/imagenie/imagenie.js"></script>
+    <script src="lib/angular-moment/angular-moment.min.js"></script>
+
+  </head>
+
+  <body ng-app="app" class="platform-android platform-cordova platform-webview">
+
+    <ion-nav-view ></ion-nav-view>
+  </body>
+</html>

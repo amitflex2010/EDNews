@@ -1,0 +1,18 @@
+<ion-view hide-back-button="true">
+    <ion-nav-title>{{  $root.MenuTitle | translate }}</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-hide="$exposeAside.active"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <div ng-include src="'app/views/include/menuselectbranchright-partial.html'"></div>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div ng-include src="'app/views/include/refresher-partial.html'"></div>
+        <ion-list>
+            <div ng-include src="'app/views/include/newsdebugger-partial.html'"></div>
+            <div ng-include src="'app/views/include/newsitemthumbnail-partial.html'"></div>
+        </ion-list>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

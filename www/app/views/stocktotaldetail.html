@@ -1,0 +1,10 @@
+<ion-view cache-view="false">
+    <ion-nav-title></ion-nav-title>
+    <ion-content class="has-header" scroll="true" overflow-scroll="true">
+        <h1 class="title padding-left">{{title | translate}}</h1>
+        <iframe data-tap-disabled="true" ng-src="{{iframestockgridurl}}" width="100%" height="200">
+        </iframe>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

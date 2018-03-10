@@ -1,0 +1,43 @@
+<ion-view>
+    <ion-header-bar class="bar bar-header bar-stable nav-title-slide-ios7">
+        <a class="button icon-left ion-ios7-arrow-back button-clear float-left" ui-sref="intro">
+            {{ 'Back' | translate}}
+        </a>
+    </ion-header-bar>
+    <ion-content class="dark-overlay has-header-main">
+        <h1 class="align-center intro">{{ 'intro.Geographical Site selection' | translate }}</h1>
+		<div class="first-connexion-block">
+			<ion-list>
+				<ion-item class="item-divider item-positive item-select-red">
+					{{ 'Geographical Site' | translate }}
+					<span class="item-note">
+					  {{ userPreferences.geographicalSite }}
+					</span>
+				</ion-item>
+				<div ng-repeat="item in geographicalSites| orderObjectBytranslate:'country'">
+					<ion-item class="item-stable"
+							  ng-click="toggleGroup(item)"
+							  ng-class="{active: isGroupShown(item)}"
+							  ng-value="item.country"
+							>
+						<i class="icon" ng-class="isGroupShown(item) ? 'ion-minus' : 'ion-plus'"></i>
+						&nbsp;
+						{{ item.country | translate }}
+					</ion-item>
+					<ion-radio class="item-accordion"
+							   ng-repeat="site in item.sites|orderObjectBy:'text'"
+							   ng-show="isGroupShown(item)"
+							   ng-model="$root.userPreferences.geographicalSite"
+							   ng-value="site.text"
+							   ng-change="updateUserPreferences()"
+							   ui-sref="intro"
+							>
+						{{site.text | translate }}
+					</ion-radio>
+				</div>
+			</ion-list>
+		</div>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

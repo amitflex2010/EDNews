@@ -1,0 +1,21 @@
+<ion-view cache-view="false">
+    <ion-nav-title></ion-nav-title>
+    <ion-content content scroll="false" class="has-header padding-horizontal">
+        <div style="height: 92%; overflow: auto;">
+		<div class="main-news-image" ng-show="newsDetail.image">
+            <img imagenie="{{ newsDetail.image }}" />
+        </div>
+        <h1 class="title">{{newsDetail.title}}</h1>
+        <h2>{{newsDetail.subtitle}}</h2>
+		<div class="meta">{{newsDetail.publicationDate}}</div>
+        
+		<div  ng-bind-html="fixedImageContent | hrefToExternal"></div>
+        
+        </div>
+        <div style="position:relative;">
+		    <div style="bottom:6px;right:0px;position:fixed;" ng-include src="'app/views/include/linkarticleinwat-partial.html'"></div>
+        </div>
+    </ion-content>
+    <ng-include  src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

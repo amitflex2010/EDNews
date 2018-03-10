@@ -1,0 +1,32 @@
+<ion-view>
+    <ion-header-bar class="bar bar-header bar-stable nav-title-slide-ios7">
+        <a class="button icon-left ion-ios7-arrow-back button-clear float-left" ui-sref="intro">
+            {{ 'Back' | translate}}
+        </a>
+    </ion-header-bar>
+    <ion-content class="dark-overlay has-header-main">
+        <h1 class="align-center intro">{{ 'intro.Depth selection' | translate }}</h1>
+		<div class="first-connexion-block">
+            <div ng-include src="'app/views/include/settingslistdepth-partial.html'"></div>
+
+			<ion-list>
+				<ion-item class="item-divider item-positive item-select-red">
+					{{ 'settings.Depth' | translate }}
+					<span class="item-note">
+					  {{ userPreferences.depth }}
+					</span>
+				</ion-item>
+	
+				<ion-radio ng-repeat="item in depth"
+						   ng-value="item.value"
+						   ng-model="userPreferences.depth"
+						   ng-click="updateUserPreferences()"
+						   ui-sref="intro">
+					{{ item.text | translate }}
+				</ion-radio>
+			</ion-list>
+		</div>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

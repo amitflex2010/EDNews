@@ -1,0 +1,134 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-pane ion-side-menu-content>
+        <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+            <ion-nav-back-button class="button-clear"><i class="icon ion-ios-arrow-back"></i>
+                {{ $root.MenuTitle | translate}}
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent" animation="slide-left-right-ios7"></ion-nav-view>
+    </ion-pane>
+    <ion-side-menu side="left" expose-aside-when="large">
+        <header class="bar bar-header bar-stable main-header">
+			<ion-item nav-clear menu-close ui-sref="app.carousel-group"><img src="app/img/logo-wat.png" width="207" height="38" alt=""/></ion-item>
+        </header>
+        <ion-content class="has-header has-header-main">
+            <ion-list>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.indicator-stock" ui-sref-active="active">
+                    <i class="icon ion-podium"></i>{{ "app.indicator-stock" | translate }}
+                </ion-item>
+                <ion-item class="item-divider">
+                    {{ "Group" | translate }}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.watsup-group" ui-sref-active="active">
+                    <i class="icon ion-home"></i>{{ "app.watsup-group" | translate }}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.watsnew-group" ui-sref-active="active"
+					ng-show="$root.userPreferences.display.watsnewgroup.checked">
+                    {{ 'app.watsnew-group' | translate }}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.pressrelease-group" ui-sref-active="active"
+					ng-show="$root.userPreferences.display.pressrelease.checked">
+                    {{ 'app.pressrelease-group' | translate }}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.presspanorama-group" ui-sref-active="active"
+					ng-show="$root.userPreferences.display.presspanorama.checked">
+                    {{ 'app.presspanorama-group' | translate }}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.nominations-group" ui-sref-active="active"
+					ng-show="$root.userPreferences.display.nominationsgroup.checked">
+                    {{ 'app.nominations-group' | translate }}
+                </ion-item>
+                <ion-item class="item-divider"
+                          ng-show="$root.userPreferences.display.newsbranch.checked || $root.userPreferences.display.nominationsbranch.checked">
+                    {{ 'My Branch' | translate }}
+                    <span class="item-note-menu item-note">
+					  {{ userPreferences.branch | translate }}
+					</span>
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.news-branch" ui-sref-active="active"
+					ng-show="$root.userPreferences.display.newsbranch.checked">
+                    {{ 'app.news-branch' | translate }}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.nominations-branch" ui-sref-active="active"
+					ng-show="$root.userPreferences.display.nominationsbranch.checked">
+                    {{ 'app.nominations-branch' | translate }}
+                </ion-item>
+                <ion-item class="item-divider"
+                          ng-show="$root.userPreferences.display.newsentity.checked || $root.userPreferences.display.nominationsentity.checked">
+                    {{ 'My Entity' | translate }}
+                    <span class="item-note">
+					  {{ userPreferences.entity }}
+					</span>
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.news-entity" ui-sref-active="active"
+                          ng-show="$root.userPreferences.display.newsentity.checked">
+                    {{ 'app.news-entity' | translate }}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.nominations-entity" ui-sref-active="active"
+                          ng-show="$root.userPreferences.display.nominationsentity.checked">
+                    {{ 'app.nominations-entity' | translate }}
+                </ion-item>
+                <ion-item class="item-divider"
+                          ng-show="$root.userPreferences.display.newsprofessionalfield.checked || $root.userPreferences.display.nominationsprofessionalfield.checked">
+                    {{ 'My Professional Field' | translate }}
+                    <span class="item-note-menu item-note">
+					  {{ userPreferences.professionalField | translate }}
+					</span>
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.news-professionalfield" ui-sref-active="active"
+                          ng-show="$root.userPreferences.display.newsprofessionalfield.checked">
+                    {{ 'app.news-professionalfield' | translate }}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.nominations-professionalfield" ui-sref-active="active"
+                          ng-show="$root.userPreferences.display.nominationsprofessionalfield.checked">
+                    {{ 'app.nominations-professionalfield' | translate }}
+                </ion-item>
+
+                <ion-item class="item-divider"
+                          ng-show="$root.userPreferences.display.newsgeographicalsite.checked">
+                    {{ 'My Geographical Site' | translate }}
+                    <span class="item-note-menu item-note">
+					  {{ userPreferences.geographicalSite | translate }}
+					</span>
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.news-geographicalsite" ui-sref-active="active"
+                          ng-show="$root.userPreferences.display.newsgeographicalsite.checked">
+                    {{ 'app.news-geographicalsite' | translate }}
+                </ion-item>
+                
+                <ion-item class="item-divider"
+                          ng-show="$root.userPreferences.display.newshumanresources.checked">
+                    {{ 'Human Resources' | translate }}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left" ui-sref="app.news-humanresources" ui-sref-active="active"
+                          ng-show="$root.userPreferences.display.newshumanresources.checked">
+                    {{ 'app.news-humanresources' | translate }}
+                </ion-item>
+				<!-- ion-item nav-clear menu-close class="padding-left item-icon-left" ui-sref="app.my-wat" ui-sref-active="active">
+					<i class="icon ion-person"></i> {{ "app.my-wat" | translate }}
+				</ion-item -->
+                <ion-item nav-clear menu-close class="padding-left item-icon-left" ui-sref="app.settings"
+                          ui-sref-active="active">
+                    <i class="icon ion-gear-b"></i>
+                    {{ 'app.settings' | translate }}
+                </ion-item>
+				<ion-item nav-clear menu-close class="padding-left item-icon-left" ui-sref="app.help"
+                          ui-sref-active="active">
+                    <i class="icon ion-help"></i>
+                    {{ 'app.help' | translate}}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left item-icon-left" ui-sref="app.debug" ui-sref-active="active"
+                          ng-show="$root.userPreferences.display.debug.checked">
+                    <i class="icon ion-bug"></i>
+                    {{ 'app.debug' | translate}}
+                </ion-item>
+                <ion-item nav-clear menu-close class="padding-left item-icon-left" ui-sref="#" ng-click="openMyWat()" ui-sref-active="active"
+                          >
+                    <i class="icon ion-chevron-right"></i>
+                    {{'Access'| translate}} à <span style ="color:#e03; font-style: italic;">my</span> <b><span style="color:#37BAC8">W</span>A<span style="color:#37BAC8">T</span></b>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>

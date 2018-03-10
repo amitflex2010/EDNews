@@ -1,0 +1,24 @@
+<ion-view>
+    <ion-nav-title></ion-nav-title>
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item class="item-divider item-positive">
+                {{ 'Professional Field' | translate }}
+                <span class="item-note">
+                  {{ $root.userPreferences.professionalField }}
+                </span>
+            </ion-item>
+
+            <ion-radio ng-repeat="item in professionalFields | orderBy:'text | translate'"
+                       ng-value="item.text"
+                       ng-model="$root.userPreferences.professionalField"
+                       ng-change="updateUserPreferences()"
+                       ui-sref="app.settings"
+                    >
+                {{ item.text | translate }}
+            </ion-radio>
+        </ion-list>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

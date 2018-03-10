@@ -1,0 +1,5 @@
+<select ng-options="item as item.text | translate for item in branches | orderBy:'text | translate'"
+        ng-model="selectedBranch"
+        ng-change="updateBranch(selectedBranch.text)"
+        >
+</select>

@@ -1,0 +1,15 @@
+<ion-refresher pulling-text="{{'Force Refresh' | translate}}" on-pulling="onMyPulling()" on-refresh="loadNews()">
+</ion-refresher>
+<h4 ng-show="onPulling" class="align-center">
+    <div ng-if="newsItems.refreshTime">
+        {{ 'Refreshed' | translate }} <span am-time-ago="newsItems.refreshTime"></span>
+    </div>
+</h4>
+<h4 ng-show="loading && !onPulling" class="align-center">
+    <div>
+    <ion-spinner icon="lines"></ion-spinner> {{ 'Refreshing' | translate }}
+    </div>
+</h4>
+<h4 ng-show="newsItems.newsData==''" class="align-center">
+    {{ 'No news' | translate }} {{ $root.userPreferences.depth }} {{ 'days' | translate }}
+</h4>

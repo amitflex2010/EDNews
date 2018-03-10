@@ -1,0 +1,27 @@
+<ion-view>
+    <ion-nav-title></ion-nav-title>
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item class="item-divider item-positive">
+               {{ 'Notifications' | translate }}
+                
+            </ion-item>
+
+           <ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.safetyindicatordaily.checked"
+                       ng-change="updateUserPreferenceForSecurityNotificatioSettings()">
+				{{ 'Safety indicator' | translate }} ({{ 'daily' | translate }})
+			</ion-toggle>
+			<ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.safetyindicatormajoraccident.checked"
+                       ng-change="updateUserPreferenceForSecurityNotificatioSettings()">
+				{{ 'Safety indicator' | translate }} ({{ 'major accident' | translate }})
+			</ion-toggle>
+			<ion-toggle toogle-class="toggle-assertive" ng-model="userPreferences.display.majornews.checked"
+                       ng-change="updateUserPreferenceForSecurityNotificatioSettings()">
+				{{ 'Major news' | translate }}
+			</ion-toggle>
+         
+         </ion-list>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

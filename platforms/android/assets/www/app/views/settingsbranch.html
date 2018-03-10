@@ -1,0 +1,24 @@
+<ion-view>
+    <ion-nav-title></ion-nav-title>
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item class="item-divider item-positive">
+                {{ 'Branch' | translate }}
+                <span class="item-note">
+                  {{ $root.userPreferences.branch }}
+                </span>
+            </ion-item>
+
+            <ion-radio ng-repeat="item in branches"
+                       ng-value="item.text"
+                       ng-model="$root.userPreferences.branch"
+                       ng-change="updateUserPreferences()"
+                       ui-sref="app.settings"
+                    >
+                {{ item.text | translate }}
+            </ion-radio>
+        </ion-list>
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>

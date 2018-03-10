@@ -1,0 +1,21 @@
+<ion-view cache-view="false">
+    <ion-nav-title></ion-nav-title>
+    <ion-content class="has-header padding-horizontal">
+		<div class="main-news-image">
+            <img imagenie="{{ newsDetail.nominationData.image }}" ng-if="newsDetail.nominationData.image.indexOf('app/img') == -1"/>
+            <img ng-src="{{ newsDetail.nominationData.image }}" ng-if="newsDetail.nominationData.image.indexOf('app/img') > -1"/>
+        </div>
+        <h1 class="title">{{newsDetail.title}}</h1>
+		<h2> {{ newsDetail.description }} </h2>
+        <h4 ng-show="{{newsDetail.subtitle}}">{{newsDetail.subtitle}}</h4>
+		<div class="meta meta-detail">{{newsDetail.publicationDate}}</div>
+		<div ng-bind-html="newsDetail.content | hrefToExternal"></div>
+
+		<div ng-include src="'app/views/include/linkpdfinwat-partial.html'"></div>
+
+		<div ng-include src="'app/views/include/linkarticleinwat-partial.html'"></div>
+
+    </ion-content>
+    <ng-include src="'app/views/include/xiti-partial.html'">
+    </ng-include>
+</ion-view>
