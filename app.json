@@ -1,0 +1,7 @@
+{
+  "name": "bookmyhome",
+  "description": "Property search Application",
+  "repository": "https://github.com/vijay-kumar-singh/bookmyhome",
+  "logo": "http://pereless360.com/img/SP/Ghost/360-logo-white.png",
+  "keywords": ["ionic2", "heroku", "pereless360"]
+}
