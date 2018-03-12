@@ -18,13 +18,13 @@
                 
                 $ionicPlatform.ready(function ()
                 {     
-                   
+                 //  console.log(rssApi.getNewsUrl(debugApi.getDebugPreferences().liveRootUrl));
                     if(ionic.Platform.isIOS)
                     {
-                         registerDeviceForPushNotification();
+                         //registerDeviceForPushNotification();
                     }
 
-                    navigator.splashscreen.hide();
+                   // navigator.splashscreen.hide();
 					setValidEmagURL();
 
 					
@@ -869,9 +869,19 @@
 
                     function initNews() {
                     var newsFeedUrl = settingsApi.getWatNewsFeedURLs().NEWS_FEED;
+                    var newsURL = "";
+                    if(debugApi.getDebugPreferences().debugMode.checked)
+                    {
+                        newsURL = rssApi.getNewsUrl(debugApi.getDebugPreferences().liveRootUrl);
+                    }
+                    else
+                    {
+                        newsURL = rssApi.getNewsUrl(CONFIG_ENV.URL.feedUrl+newsFeedUrl);
+                       
+                    }
                     $scope.debug = {
                         'debugMode': debugApi.getDebugPreferences().debugMode,
-                        'rssFeedUrl': rssApi.getNewsUrl(CONFIG_ENV.URL.feedUrl+newsFeedUrl)
+                        'rssFeedUrl': rssApi.getNewsUrl(newsURL)
                     };
                     $rootScope.debugMode = $scope.debug.debugMode.checked;
                     $rootScope.userPreferences = settingsApi.getUserPreferences();
@@ -942,7 +952,16 @@
                             settingsApi.updateSelectedBranch(branch);
                             
                             var newsFeedUrl = settingsApi.getWatNewsFeedURLs().NEWS_FEED;
-                            $scope.debug.rssFeedUrl = rssApi.getNewsUrl(CONFIG_ENV.URL.feedUrl+newsFeedUrl);
+                            if($rootScope.debugMode)
+                            {
+                                $scope.debug.rssFeedUrl = rssApi.getNewsUrl(debugApi.getDebugPreferences().liveRootUrl);
+                            }
+                            else
+                            {
+                                $scope.debug.rssFeedUrl = rssApi.getNewsUrl(CONFIG_ENV.URL.feedUrl+newsFeedUrl);
+                                console.log("hre2")
+                            }
+                            
                             $scope.loadNews();
                         };
                        
@@ -963,7 +982,15 @@
                             $scope.newsItems = {};
                             settingsApi.updateSelectedProfessionalField(professionalField);
                             var newsFeedUrl = settingsApi.getWatNewsFeedURLs().NEWS_FEED;
-                            $scope.debug.rssFeedUrl = rssApi.getNewsUrl(CONFIG_ENV.URL.feedUrl+newsFeedUrl);
+                            if($rootScope.debugMode)
+                            {
+                                $scope.debug.rssFeedUrl = rssApi.getNewsUrl(debugApi.getDebugPreferences().liveRootUrl);
+                            }
+                            else
+                            {
+                                $scope.debug.rssFeedUrl = rssApi.getNewsUrl(CONFIG_ENV.URL.feedUrl+newsFeedUrl);
+                                console.log("hre3")
+                            }
                             
                             $scope.loadNews();
                         }
@@ -1011,7 +1038,7 @@
 
                 // load when entering view
                 $scope.loadLazyNews = function () {
-
+                    var carosuelUrl = ""
                    
                     try {
                         var now = (new Date()).getTime();
@@ -1028,7 +1055,18 @@
                         // refresh only if no news or news refresh > 15 min or language has changed since last 15 min.
                         if ( ! $scope.newsItems || newsToRefresh) {
                            
-   
+                            
+                            var newsFeedUrl = settingsApi.getWatNewsFeedURLs().NEWS_FEED;
+                            if($rootScope.debugMode)
+                            {
+                                $scope.debug.rssFeedUrl = rssApi.getNewsUrl(debugApi.getDebugPreferences().liveRootUrl);
+                            }
+                            else
+                            {
+                                $scope.debug.rssFeedUrl = rssApi.getNewsUrl(CONFIG_ENV.URL.feedUrl+newsFeedUrl);
+                                console.log("hre4")
+                            }
+
                             $scope.loadNews();
                             if ($state.current.name.indexOf('carousel') != -1) {
                                 newsCarouselToRefresh = (lastUserPreferencesUpdateTime && (!oldLastUserPreferencesUpdateTime ||
@@ -1039,9 +1077,22 @@
                                     urlNewsCarousel = [];
 
                                     // initialize url News for other universe
-                                    for (var i = 0; i < 4; i++) {
-                                        urlNewsCarousel.push(rssApi.getUrlCarouselNews(CONFIG_ENV.URL.feedUrl+settingsApi.getWatNewsFeedURLs().NEWS_FEED, i));
+                                    var newsFeedUrl = settingsApi.getWatNewsFeedURLs().NEWS_FEED;
+                                    if($rootScope.debugMode)
+                                    {
+                                       carosuelUrl = rssApi.getNewsUrl(debugApi.getDebugPreferences().liveRootUrl);
                                     }
+                                    else
+                                    {
+                                        carosuelUrl = rssApi.getNewsUrl(CONFIG_ENV.URL.feedUrl+newsFeedUrl);
+                                        console.log("hre5")
+                                    }
+
+                                    for (var i = 0; i < 4; i++) {
+                                        urlNewsCarousel.push(rssApi.getUrlCarouselNews(carosuelUrl, i));
+                                    }
+
+                                  
                                 }
 
                                 $scope.loadMoreData = function () {
@@ -1084,10 +1135,11 @@
 
                     rssApi.getNews($scope.debug.rssFeedUrl).then(function () {
                         rssDataRefreshed = true;
-                        
+                       
                     }).finally(function () {
                         $scope.$broadcast('scroll.refreshComplete');
                         $scope.loading = false;
+
                         rssData = rssApi.getCachedNews($scope.debug.rssFeedUrl);
                      
 
@@ -1137,6 +1189,8 @@
                         return;
                     }
                     var url = urlNewsCarousel[$scope.scrollDownCount];
+
+                    console.log(url)
                     rssApi.getNews(url).then(function () {
                         rssDataRefreshed = true;
                     }).finally(function () {
@@ -1218,7 +1272,17 @@
 
                 $scope.getRssData = function () {
                     var newsFeedUrl = settingsApi.getWatNewsFeedURLs().NEWS_FEED;
-                    debugApi.getDebugRssData(CONFIG_ENV.URL.feedUrl+settingsApi.getWatNewsFeedURLs().NEWS_FEED + $scope.debugPreferences.queryParameters, $scope.debugPreferences.jsonFormat.checked).then(function (data) {
+                    var carosuelUrl = "";
+                    if(debugApi.getDebugPreferences().debugMode.checked)
+                    {
+                        carosuelUrl = rssApi.getNewsUrl(debugApi.getDebugPreferences().liveRootUrl);
+                    }
+                    else
+                    {
+                        carosuelUrl = rssApi.getNewsUrl(CONFIG_ENV.URL.feedUrl+newsFeedUrl);
+                        console.log("hre6")
+                    }
+                    debugApi.getDebugRssData(carosuelUrl + $scope.debugPreferences.queryParameters, $scope.debugPreferences.jsonFormat.checked).then(function (data) {
                         $scope.debugRssData = data;
                     });
                 };

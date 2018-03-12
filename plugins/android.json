@@ -40,6 +40,12 @@
         "phonegap-plugin-push": {
             "SENDER_ID": "85075801930",
             "PACKAGE_NAME": "com.total.inhouse.hd.watnews"
+        },
+        "cordova-plugin-ionic-webview": {
+            "PACKAGE_NAME": "com.total.inhouse.hd.watnews"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.total.inhouse.hd.watnews"
         }
     },
     "dependent_plugins": {

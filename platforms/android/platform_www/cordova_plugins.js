@@ -282,7 +282,9 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-x-toast": "2.6.0",
     "ionic-plugin-keyboard": "2.2.1",
-    "phonegap-plugin-push": "1.10.5"
+    "phonegap-plugin-push": "1.10.5",
+    "cordova-plugin-ionic-webview": "1.1.16",
+    "cordova-plugin-whitelist": "1.3.3"
 };
 // BOTTOM OF METADATA
 });

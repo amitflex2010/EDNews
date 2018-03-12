@@ -1,70 +1,77 @@
 {
-  "name": "EDNews",
-  "version": "1.0.0",
-  "description": "WAT News",
-  "dependencies": {
-    "com.lampa.startapp": "git+https://github.com/lampaa/com.lampa.startapp.git",
-    "cordova-android": "^6.2.3",
-    "cordova-plugin-appavailability": "git+https://github.com/ohh2ahh/AppAvailability.git",
-    "cordova-plugin-compat": "^1.0.0",
-    "cordova-plugin-console": "^1.0.7",
-    "cordova-plugin-device": "^1.1.4",
-    "cordova-plugin-dialogs": "~1.3.1",
-    "cordova-plugin-file": "^4.3.3",
-    "cordova-plugin-file-transfer": "^1.6.3",
-    "cordova-plugin-splashscreen": "^4.0.3",
-    "cordova-plugin-x-toast": "git+https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
-    "gulp": "^3.5.6",
-    "gulp-concat": "^2.2.0",
-    "gulp-minify-css": "^0.3.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^2.2.0",
-    "ionic-plugin-keyboard": "^2.2.1",
-    "node-gcm": "^0.14.6",
-    "phonegap-plugin-push": "^1.10.5",
-    "plist": "^2.1.0"
-  },
-  "devDependencies": {
-    "@ionic/cli-plugin-gulp": "1.1.1",
-    "@ionic/cli-plugin-ionic1": "2.1.1",
-    "bower": "^1.3.3",
-    "gulp": "^3.8.10",
-    "gulp-angular-templatecache": "^1.4.2",
-    "gulp-minify-html": "^0.1.6",
-    "gulp-util": "^3.0.1",
-    "shelljs": "^0.3.0"
-  },
-  "cordovaPlugins": [
-    "cordova-plugin-dialogs",
-    "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
-    "cordova-plugin-device",
-    "cordova-plugin-file",
-    "cordova-plugin-file-transfer",
-    "cordova-plugin-splashscreen",
-    "ionic-plugin-keyboard",
-    "cordova-plugin-console",
-    "phonegap-plugin-push",
-    "https://github.com/ohh2ahh/AppAvailability.git",
-    "https://github.com/lampaa/com.lampa.startapp.git"
-  ],
-  "cordova": {
-    "platforms": [
-      "android"
+    "name": "EDNews",
+    "version": "1.0.0",
+    "description": "WAT News",
+    "dependencies": {
+        "com.lampa.startapp": "git+https://github.com/lampaa/com.lampa.startapp.git",
+        "cordova-android": "^6.2.3",
+        "cordova-plugin-appavailability": "git+https://github.com/ohh2ahh/AppAvailability.git",
+        "cordova-plugin-compat": "^1.0.0",
+        "cordova-plugin-console": "^1.0.7",
+        "cordova-plugin-device": "^1.1.4",
+        "cordova-plugin-dialogs": "~1.3.1",
+        "cordova-plugin-file": "^4.3.3",
+        "cordova-plugin-file-transfer": "^1.6.3",
+        "cordova-plugin-splashscreen": "^4.0.3",
+        "cordova-plugin-x-toast": "git+https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+        "gulp": "^3.5.6",
+        "gulp-concat": "^2.2.0",
+        "gulp-minify-css": "^0.3.0",
+        "gulp-rename": "^1.2.0",
+        "gulp-sass": "^2.2.0",
+        "ionic-plugin-keyboard": "^2.2.1",
+        "node-gcm": "^0.14.6",
+        "phonegap-plugin-push": "^1.10.5",
+        "plist": "^2.1.0",
+        "cordova-plugin-ionic-keyboard": "^2.0.5",
+        "cordova-plugin-ionic-webview": "^1.1.16",
+        "cordova-plugin-whitelist": "^1.3.3"
+    },
+    "devDependencies": {
+        "@ionic/cli-plugin-ionic1": "2.1.1",
+        "bower": "^1.3.3",
+        "gulp": "^3.8.10",
+        "gulp-angular-templatecache": "^1.4.2",
+        "gulp-minify-html": "^0.1.6",
+        "gulp-util": "^3.0.1",
+        "shelljs": "^0.3.0"
+    },
+    "cordovaPlugins": [
+        "cordova-plugin-dialogs",
+        "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+        "cordova-plugin-device",
+        "cordova-plugin-file",
+        "cordova-plugin-file-transfer",
+        "cordova-plugin-splashscreen",
+        "ionic-plugin-keyboard",
+        "cordova-plugin-console",
+        "phonegap-plugin-push",
+        "https://github.com/ohh2ahh/AppAvailability.git",
+        "https://github.com/lampaa/com.lampa.startapp.git",
+        "cordova-plugin-ionic-webview@^1.1.16",
+        "cordova-plugin-whitelist@^1.3.3"
     ],
-    "plugins": {
-      "cordova-plugin-dialogs": {},
-      "cordova-plugin-device": {},
-      "cordova-plugin-file": {},
-      "cordova-plugin-file-transfer": {},
-      "cordova-plugin-splashscreen": {},
-      "ionic-plugin-keyboard": {},
-      "cordova-plugin-console": {},
-      "phonegap-plugin-push": {
-        "SENDER_ID": "384471165946"
-      },
-      "cordova-plugin-x-toast": {},
-      "cordova-plugin-appavailability": {},
-      "com.lampa.startapp": {}
+    "cordova": {
+        "platforms": [
+            "android"
+        ],
+        "plugins": {
+            "cordova-plugin-dialogs": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-file": {},
+            "cordova-plugin-file-transfer": {},
+            "cordova-plugin-splashscreen": {},
+            "ionic-plugin-keyboard": {},
+            "cordova-plugin-console": {},
+            "phonegap-plugin-push": {
+                "SENDER_ID": "384471165946"
+            },
+            "cordova-plugin-x-toast": {},
+            "cordova-plugin-appavailability": {},
+            "com.lampa.startapp": {},
+            "cordova-plugin-ionic-keyboard": {},
+            "cordova-plugin-ionic-webview": {},
+            "cordova-plugin-whitelist": {}
+        }
     }
-  }
 }

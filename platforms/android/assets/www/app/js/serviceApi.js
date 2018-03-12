@@ -479,9 +479,20 @@
 
         rssDataCache.setOptions({
             onExpire: function (key, value) {
-                var baseURL = CONFIG_ENV.URL.feedUrl;
-                var newsFeedurl = settingsApi.getWatNewsFeedURLs().NEWS_FEED;
-                var url = getNewsUrl(baseURL+newsFeedurl)
+                var finalURL = "";
+               
+
+                var newsFeedUrl = settingsApi.getWatNewsFeedURLs().NEWS_FEED;
+                if(debugApi.getDebugPreferences().debugMode.checked)
+                {
+                    finalURL = debugApi.getDebugPreferences().liveRootUrl;
+                }
+                else
+                {
+                    finalURL = rssApi.getNewsUrl(CONFIG_ENV.URL.feedUrl+newsFeedUrl);
+                }
+
+                var url = getNewsUrl(finalURL)
                 getNews(url).
                     then(function () {
                         console.log("News was refreshed after cache expiration");
@@ -558,7 +569,7 @@
                 queryParameters.url = queryParameters.url +
                 "&days="+ ((queryParameters.content == 3)? 2 : settingsApi.getUserPreferences().depth);
             }
-
+           
             return baseUrl + queryParameters.url;
         }
 
@@ -597,6 +608,8 @@
                 // if panorama, restrict to 2 days
                 queryParameters.url = queryParameters.url + "&days="+ settingsApi.getUserPreferences().depth;
             }
+
+            
             return baseUrl + queryParameters.url;
         }
 
@@ -608,6 +621,8 @@
        
 
         function getNews(url) {
+
+            
             var rssUrl = url;
             var newsKey = url;
             var now = (new Date()).getTime();

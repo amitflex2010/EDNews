@@ -495,7 +495,7 @@
                     'safetyindicatordaily':{checked:true},
                     'safetyindicatormajoraccident':{checked:true},
                     'majornews':{checked:true},
-                    'debug': {checked: false}
+                    'debug': {checked: true}
                 },
 				"depth": "14",
 				"firstConnexion": true,

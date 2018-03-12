@@ -15,8 +15,8 @@
                 feedUrl: 'http://www.totalsa.mdgms.com/json/feed.php?'
             },
             'DEBUG': {
-                'debugMode': {checked: false},
-                'liveData': {checked: true},
+                'debugMode': {checked: true},
+                'liveData': {checked: false},
                 'jsonFormat': {checked: true},
                 'queryParameters': 'Content=1&Universe=1&thematicId=100e2656-a99e-4c1b-a209-b21cc4eca5bf&Language=1033'
             },
